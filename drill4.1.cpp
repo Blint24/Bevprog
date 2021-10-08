@@ -11,7 +11,9 @@ int main()
 	vector<double> szamok;
 	double sum = 0;
 	string unit;
-	while(cin >> a >> unit){	
+	int error;
+	while(cin >> a >> unit){
+			error = 0;
 			if (unit == "m"){
 				szamok.push_back(a);
 				sum += a;
@@ -26,11 +28,12 @@ int main()
 				sum += a * mtocm;
 			}else{
 				cout << "Value rejected\n";
+				error++;
 			}			
-			if((a < min) || (min == 0)){
+			if((a < min) || (min == 0) && (error == 0)){
 				min = a;
 				cout << "smallest number so far: " << min << "\n";
-			}else if((a > max) || (max == 0)){
+			}else if((a > max) || (max == 0) (error == 0)){
 				max = a;
 				cout << "largest number so far: " << max << "\n";			
 			}

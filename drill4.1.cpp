@@ -33,7 +33,7 @@ int main()
 			if((a < min) || (min == 0) && (error == 0)){
 				min = a;
 				cout << "smallest number so far: " << min << "\n";
-			}else if((a > max) || (max == 0) (error == 0)){
+			}else if((a > max) || (max == 0) && (error == 0)){
 				max = a;
 				cout << "largest number so far: " << max << "\n";			
 			}

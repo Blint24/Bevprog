@@ -6,7 +6,7 @@ constexpr char quit = 'x';
 constexpr char print = '=';
 constexpr char name = 'a';
 constexpr char let = 'L';
-constexpr char result = ':';
+constexpr char result = '=';
 const string declkey = "let"; //constexpr string since C++20 only
 
 //function declarations
@@ -105,7 +105,7 @@ Token Token_stream::get()
 
 	switch (ch)
 	{
-		case print:
+		//case print:
 		case quit:
 		case '(':
 		case ')':
@@ -175,7 +175,7 @@ void calculate()
 		while (t.kind == print) t = ts.get();
 		if (t.kind == quit) return;
 		ts.putback(t);
-		cout << result << statement() << endl;
+		cout << print << statement() << endl;
 	}
 	catch (exception& e) {
 		cerr << e.what() << endl;
